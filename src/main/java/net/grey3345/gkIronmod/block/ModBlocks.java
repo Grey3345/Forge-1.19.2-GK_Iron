@@ -172,11 +172,11 @@ public class ModBlocks {
     // Formed wrought Iron Chiselled Waxed
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_CHISELLED_WAXED = BLOCKS.register("wrought_iron_block_chiselled_waxed",
             () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_CHISELLED.get()), WeatheringCopper.WeatherState.UNAFFECTED));
-    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_EXPOSED_CHISELLED_WAXED = BLOCKS.register("wrought_iron_block_chiselled_exposed_waxed",
+    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_CHISELLED_EXPOSED_WAXED = BLOCKS.register("wrought_iron_block_chiselled_exposed_waxed",
             () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_CHISELLED.get()), WeatheringCopper.WeatherState.EXPOSED));
-    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_WEATHERED_CHISELLED_WAXED = BLOCKS.register("wrought_iron_block_chiselled_weathered_waxed",
+    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_CHISELLED_WEATHERED_WAXED = BLOCKS.register("wrought_iron_block_chiselled_weathered_waxed",
             () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_CHISELLED.get()), WeatheringCopper.WeatherState.WEATHERED));
-    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_RUSTED_CHISELLED_WAXED = BLOCKS.register("wrought_iron_block_chiselled_rusted_waxed",
+    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_CHISELLED_RUSTED_WAXED = BLOCKS.register("wrought_iron_block_chiselled_rusted_waxed",
             () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_CHISELLED.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     // Formed wrought Iron Pillar
@@ -192,11 +192,11 @@ public class ModBlocks {
     // Formed wrought Iron Pillar Waxed
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PILLAR_WAXED = BLOCKS.register("wrought_iron_block_pillar_waxed",
             () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PILLAR.get()), WeatheringCopper.WeatherState.UNAFFECTED));
-    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_EXPOSED_PILLAR_WAXED = BLOCKS.register("wrought_iron_block_pillar_exposed_waxed",
+    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PILLAR_EXPOSED_WAXED = BLOCKS.register("wrought_iron_block_pillar_exposed_waxed",
             () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PILLAR.get()), WeatheringCopper.WeatherState.EXPOSED));
-    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_WEATHERED_PILLAR_WAXED = BLOCKS.register("wrought_iron_block_pillar_weathered_waxed",
+    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PILLAR_WEATHERED_WAXED = BLOCKS.register("wrought_iron_block_pillar_weathered_waxed",
             () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PILLAR.get()), WeatheringCopper.WeatherState.WEATHERED));
-    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_RUSTED_PILLAR_WAXED = BLOCKS.register("wrought_iron_block_pillar_rusted_waxed",
+    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PILLAR_RUSTED_WAXED = BLOCKS.register("wrought_iron_block_pillar_rusted_waxed",
             () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PILLAR.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     // Formed wrought Iron Plated
@@ -248,13 +248,13 @@ public class ModBlocks {
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PLATED_SLAB_RUSTED = BLOCKS.register("wrought_iron_block_planted_slab_rusted",
             () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_SLAB.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
-    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_TILES_SLAB_WAXED = BLOCKS.register("wrought_iron_block_planted_slab_waxed",
+    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PLATED_SLAB_WAXED = BLOCKS.register("wrought_iron_block_planted_slab_waxed",
             () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_SLAB.get()), WeatheringCopper.WeatherState.UNAFFECTED));
-    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_TILES_SLAB_EXPOSED_WAXED = BLOCKS.register("wrought_iron_block_planted_slab_exposed_waxed",
+    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PLATED_SLAB_EXPOSED_WAXED = BLOCKS.register("wrought_iron_block_planted_slab_exposed_waxed",
             () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_SLAB.get()), WeatheringCopper.WeatherState.EXPOSED));
-    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_TILES_SLAB_WEATHERED_WAXED = BLOCKS.register("wrought_iron_block_planted_slab_weathered_waxed",
+    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PLATED_SLAB_WEATHERED_WAXED = BLOCKS.register("wrought_iron_block_planted_slab_weathered_waxed",
             () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_SLAB.get()), WeatheringCopper.WeatherState.WEATHERED));
-    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_TILES_SLAB_RUSTED_WAXED = BLOCKS.register("wrought_iron_block_planted_slab_rusted_waxed",
+    public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PLATED_SLAB_RUSTED_WAXED = BLOCKS.register("wrought_iron_block_planted_slab_rusted_waxed",
             () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_SLAB.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     // Formed wrought Iron Plated wall
@@ -496,11 +496,11 @@ public class ModBlocks {
     // Formed wrought Iron Chiselled Waxed
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_CHISELLED_WAXED = BLOCKS.register("refined_wrought_iron_block_chiselled_waxed",
             () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CHISELLED.get()), WeatheringCopper.WeatherState.UNAFFECTED));
-    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_EXPOSED_CHISELLED_WAXED = BLOCKS.register("refined_wrought_iron_block_chiselled_exposed_waxed",
+    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_CHISELLED_EXPOSED_WAXED = BLOCKS.register("refined_wrought_iron_block_chiselled_exposed_waxed",
             () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CHISELLED.get()), WeatheringCopper.WeatherState.EXPOSED));
-    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_WEATHERED_CHISELLED_WAXED = BLOCKS.register("refined_wrought_iron_block_chiselled_weathered_waxed",
+    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_CHISELLED_WEATHERED_WAXED = BLOCKS.register("refined_wrought_iron_block_chiselled_weathered_waxed",
             () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CHISELLED.get()), WeatheringCopper.WeatherState.WEATHERED));
-    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_RUSTED_CHISELLED_WAXED = BLOCKS.register("refined_wrought_iron_block_chiselled_rusted_waxed",
+    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_CHISELLED_RUSTED_WAXED = BLOCKS.register("refined_wrought_iron_block_chiselled_rusted_waxed",
             () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CHISELLED.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     // Formed wrought Iron Pillar
@@ -516,11 +516,11 @@ public class ModBlocks {
     // Formed wrought Iron Pillar Waxed
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PILLAR_WAXED = BLOCKS.register("refined_wrought_iron_block_pillar_waxed",
             () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PILLAR.get()), WeatheringCopper.WeatherState.UNAFFECTED));
-    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_EXPOSED_PILLAR_WAXED = BLOCKS.register("refined_wrought_iron_block_pillar_exposed_waxed",
+    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PILLAR_EXPOSED_WAXED = BLOCKS.register("refined_wrought_iron_block_pillar_exposed_waxed",
             () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PILLAR.get()), WeatheringCopper.WeatherState.EXPOSED));
-    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_WEATHERED_PILLAR_WAXED = BLOCKS.register("refined_wrought_iron_block_pillar_weathered_waxed",
+    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PILLAR_WEATHERED_WAXED = BLOCKS.register("refined_wrought_iron_block_pillar_weathered_waxed",
             () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PILLAR.get()), WeatheringCopper.WeatherState.WEATHERED));
-    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_RUSTED_PILLAR_WAXED = BLOCKS.register("refined_wrought_iron_block_pillar_rusted_waxed",
+    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PILLAR_RUSTED_WAXED = BLOCKS.register("refined_wrought_iron_block_pillar_rusted_waxed",
             () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PILLAR.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     // Formed wrought Iron Plated
@@ -571,6 +571,25 @@ public class ModBlocks {
             () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_SLAB.get()), WeatheringCopper.WeatherState.WEATHERED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_SLAB_RUSTED = BLOCKS.register("refined_wrought_iron_block_planted_slab_rusted",
             () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_SLAB.get()), WeatheringCopper.WeatherState.OXIDIZED));
+
+    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_WALL = BLOCKS.register("refined_wrought_iron_block_plated_wall",
+            () -> new RustableBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
+    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_WALL_EXPOSED = BLOCKS.register("refined_wrought_iron_block_plated_wall_exposed",
+            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_WALL.get()), WeatheringCopper.WeatherState.EXPOSED));
+    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_WALL_WEATHERED = BLOCKS.register("refined_wrought_iron_block_plated_wall_weathered",
+            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_WALL.get()), WeatheringCopper.WeatherState.WEATHERED));
+    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_WALL_RUSTED = BLOCKS.register("refined_wrought_iron_block_plated_wall_rusted",
+            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_WALL.get()), WeatheringCopper.WeatherState.OXIDIZED));
+
+    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_WALL_WAXED = BLOCKS.register("refined_wrought_iron_block_plated_wall_waxed",
+            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_WALL.get()), WeatheringCopper.WeatherState.UNAFFECTED));
+    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_WALL_EXPOSED_WAXED = BLOCKS.register("refined_wrought_iron_block_plated_wall_exposed_waxed",
+            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_WALL.get()), WeatheringCopper.WeatherState.EXPOSED));
+    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_WALL_WEATHERED_WAXED = BLOCKS.register("refined_wrought_iron_block_plated_wall_weathered_waxed",
+            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_WALL.get()), WeatheringCopper.WeatherState.WEATHERED));
+    public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_WALL_RUSTED_WAXED = BLOCKS.register("refined_wrought_iron_block_plated_wall_rusted_waxed",
+            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_WALL.get()), WeatheringCopper.WeatherState.OXIDIZED));
+
 
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_SLAB_WAXED = BLOCKS.register("refined_wrought_iron_block_planted_slab_waxed",
             () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_SLAB.get()), WeatheringCopper.WeatherState.UNAFFECTED));
