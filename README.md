@@ -50,6 +50,8 @@ Wrought Iron Grit? or Gravel? pebbles? of some kind to have a gravity metal bloc
 Or maybe states if you apply slime to the block it does not have gravity? 
 Maybe come up with something better
 
+Fun Block, Weight block. Whatever block you place this block on will give it gravity and push it down.
+
 Tool to pick them up? tongs?
 
 slag          You get from refining?
