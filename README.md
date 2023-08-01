@@ -14,9 +14,11 @@ Wrought Iron Plated		        Block/Stairs/Slab/wall
 Wrought Iron Chiselled		    Block
 Wrought Iron Cut		          Block/Stairs/Slab/wall/beams
 Wrought Iron Hammered		      Block/Stairs/Slab/wall/beams
+Refined Wrought Iron          Fence/Gate
 
 Wrought Iron Items 		        ingot/nugget/horseshoe
 Wrought Iron Crafting         All the blocks and items. 
+Wrought Iron Tools            Hot Wrought Iron Poker, this allows you to right click on the hot metal block and moove it one block the direction you are pushing like a piston would.
 
 Refined Wrought Iron_______________________________ 
 
@@ -25,13 +27,14 @@ Refined Wrought Iron Plated	      Block/Stairs/Slab/wall
 Refined Wrought Iron chiselled    Block
 Refined Wrought Iron Cut	        Block/Stairs/Slab/wall/beams
 Refined Wrought Iron Hammered     Block/Stairs/Slab/wall/beams
+Refined Wrought Iron              Fence/Gate
 
 Refined Wrought Iron			        Metal sign, only show text when redstone applied.
 Refined Wrought Iron Items	      nails/nuts/bolts/gears/rods/plates/rivets/chain/wire/wire brush
 Refined Wrought Iron Crafting	    All the blocks and items. 
-Refined Wrought Iron Tools        Tongs
+Refined Wrought Iron Tools        Tongs allows you to pickup the hot iron(instantly breaks them) If tried to mine with pickaxe, it hurts you and has a chance to set you on fire.
 
-Black Painted Wrought Iron_______________	________________
+Black Painted Wrought Iron_______________	________________ Cannot be heated or rusted.
 Black Painted Wrought Iron		        Block/Stairs/Slab/wall/bars/beams/door/trapdoor
 Black Painted Trimmed Wrought Iron	  Block/Stairs/Slab/wall/bars/beams/door/trapdoor
 Fence 					  flat/spike/fancy
@@ -60,7 +63,7 @@ Refined Wrought Iron 			Pressure pad/button
 
 
 THESE ARE FOR LATER.
-Found immersive weathering to add rust on iron, Might need to add on that mod.
+Found immersive weathering to add rust on iron, might need to have addon for that mod to add features from this mod.
 Vanilla iron
 Iron fence				squarewiremesh / chainlink / barbwire etc
 Iron Beams				
