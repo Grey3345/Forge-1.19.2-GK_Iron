@@ -14,7 +14,7 @@ Wrought Iron Plated		        Block/Stairs/Slab/wall
 Wrought Iron Chiselled		    Block
 Wrought Iron Cut		          Block/Stairs/Slab/wall/beams
 Wrought Iron Hammered		      Block/Stairs/Slab/wall/beams
-Refined Wrought Iron          Fence/Gate
+Wrought Iron                  Fence/Gate
 
 Wrought Iron Items 		        ingot/nugget/horseshoe
 Wrought Iron Crafting         All the blocks and items. 
