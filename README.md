@@ -5,6 +5,7 @@ Raw wrought iron 		block
 Raw wrought iron Items		chunk
 
 Formed wrought Iron _______________________________ Metal Gravity Block
+
 wrought iron 			Block/Stairs/Slab/Wall/Bars/Beams
 wrought iron Plated		Block/Stairs/Slab/wall
 wrought iron Chiselled		Block
@@ -13,6 +14,7 @@ Wrought Iron Hammered		Block/Stairs/Slab/wall/beams
 wrought iron Items 		ingot/nugget/horseshoe
 
 Refined Wrought Iron_______________________________ 
+
 Refined Wrought Iron 		Block/Stairs/Slab/wall/bars/beams/door/trapdoor
 Refined Wrought Iron Plated	Block/Stairs/Slab/wall
 Refined Wrought Iron chiselled  Block
