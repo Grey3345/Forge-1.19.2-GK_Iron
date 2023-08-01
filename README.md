@@ -4,6 +4,9 @@ Raw wrought iron_______________________________
 Raw wrought iron 		block
 Raw wrought iron Items		chunk
 
+This stuff is found in the world, in chunks close to the surface, they represent asteroids long ago that? 
+Also didn't want to mess with base iron to much, aslo it has ugly texture.
+
 Formed wrought Iron _______________________________
 
 wrought iron 			Block/Stairs/Slab/Wall/Bars/Beams
