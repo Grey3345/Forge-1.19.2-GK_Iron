@@ -46,6 +46,10 @@ Each one turning the metal more glowy red color, and each level increases damage
 Over time they will slowly return back to there original metal just like if it's rusting or oxidation, and then it can start to rust again.
 You can throw some chemical on the heated blocks to keep them in that state(will need a good solution to this) and then to clean it off.
 
+Wrought Iron Grit? or Gravel? pebbles? of some kind to have a gravity metal block if not the main one?
+Or maybe states if you apply slime to the block it does not have gravity? 
+Maybe come up with something better
+
 Tool to pick them up? tongs?
 
 slag          You get from refining?
