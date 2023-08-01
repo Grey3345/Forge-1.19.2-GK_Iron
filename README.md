@@ -7,30 +7,33 @@ Raw wrought iron Items		chunk
 This stuff is found in the world, in chunks close to the surface, they represent asteroids long ago that? 
 Also didn't want to mess with base iron to much, aslo it has ugly texture.
 
-Formed wrought Iron _______________________________
+Formed Wrought Iron _______________________________
 
-wrought iron 			Block/Stairs/Slab/Wall/Bars/Beams
-wrought iron Plated		Block/Stairs/Slab/wall
-wrought iron Chiselled		Block
-wrought iron Cut		Block/Stairs/Slab/wall/beams
-Wrought Iron Hammered		Block/Stairs/Slab/wall/beams
-wrought iron Items 		ingot/nugget/horseshoe
+Wrought Iron 			            Block/Stairs/Slab/Wall/Bars/Beams
+Wrought Iron Plated		        Block/Stairs/Slab/wall
+Wrought Iron Chiselled		    Block
+Wrought Iron Cut		          Block/Stairs/Slab/wall/beams
+Wrought Iron Hammered		      Block/Stairs/Slab/wall/beams
+Wrought Iron Items 		        ingot/nugget/horseshoe
+
+Wrought Iron Crafting         Block/Stairs/Slab/Wall/Bars/Beams/ingot/nugget/horseshoe
 
 Refined Wrought Iron_______________________________ 
 
-Refined Wrought Iron 		Block/Stairs/Slab/wall/bars/beams/door/trapdoor
-Refined Wrought Iron Plated	Block/Stairs/Slab/wall
-Refined Wrought Iron chiselled  Block
-Refined Wrought Iron Cut	Block/Stairs/Slab/wall/beams
-Refined Wrought Iron Hammered   Block/Stairs/Slab/wall/beams
+Refined Wrought Iron 		          Block/Stairs/Slab/wall/bars/beams/door/trapdoor
+Refined Wrought Iron Plated	      Block/Stairs/Slab/wall
+Refined Wrought Iron chiselled    Block
+Refined Wrought Iron Cut	        Block/Stairs/Slab/wall/beams
+Refined Wrought Iron Hammered     Block/Stairs/Slab/wall/beams
 
 
-Refined Wrought Iron Items	nails/nuts/bolts/gears/rods/plates/rivets/chain/wire
-Refined Wrought Iron Crafting	Rails
+Refined Wrought Iron Items	      nails/nuts/bolts/gears/rods/plates/rivets/chain/wire
+Refined Wrought Iron Crafting     nails/nuts/bolts/gears/rods/plates/rivets/chain/wire
+Refined Wrought Iron Crafting	    Block/Stairs/Slab/wall/bars/beams/door/trapdoor/Rails
 
 Black Painted Wrought Iron_______________	________________
-Black Painted Wrought Iron		Block/Stairs/Slab/wall/bars/beams/door/trapdoor
-Black Painted Trimmed Wrought Iron	Block/Stairs/Slab/wall/bars/beams/door/trapdoor
+Black Painted Wrought Iron		        Block/Stairs/Slab/wall/bars/beams/door/trapdoor
+Black Painted Trimmed Wrought Iron	  Block/Stairs/Slab/wall/bars/beams/door/trapdoor
 fence 					flat/spike/fancy
 fence gate 				flat/spike/fancy
 
