@@ -4,7 +4,7 @@ Raw wrought iron_______________________________
 Raw wrought iron 		block
 Raw wrought iron Items		chunk
 
-Formed wrought Iron _______________________________ Metal Gravity Block
+Formed wrought Iron _______________________________
 
 wrought iron 			Block/Stairs/Slab/Wall/Bars/Beams
 wrought iron Plated		Block/Stairs/Slab/wall
@@ -36,8 +36,15 @@ Flint n steel      Will just take wax off
 
 The doors and Trap doors Does not require redstone.
 
-
 ----Maybe
+Heating the metal mechanic. for Wrought iron and Refined Wrought iron
+When placed above lava instead of rusting it can heat up a level(3 levels up just like rust or oxidation)
+Each one turning the metal more glowy red color, and each level increases damage they do when coming into contact with it like magma blocks?
+Over time they will slowly return back to there original metal just like if it's rusting or oxidation, and then it can start to rust again.
+You can throw some chemical on the heated blocks to keep them in that state(will need a good solution to this) and then to clean it off.
+
+Tool to pick them up? tongs?
+
 slag          You get from refining?
 
 Refined Wrought Iron 			Pressure pad/button
