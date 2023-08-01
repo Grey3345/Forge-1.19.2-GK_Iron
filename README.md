@@ -53,17 +53,13 @@ If slime is rightclick on it(removes the gravity) If waterbottle is rightclicked
 
 Weight block(custom model). Whatever block you place this block on, will give it gravity and push it down.
 
-Tool to pick them up? tongs?
-
 slag          You get from refining?
+In order to refine, you need Vanilla Blast furnace.
 
 Refined Wrought Iron 			Pressure pad/button
 
 
-
-
-
-
+THESE ARE FOR LATER.
 Found immersive weathering to add rust on iron, Might need to add on that mod.
 Vanilla iron
 Iron fence				squarewiremesh / chainlink / barbwire etc
@@ -71,6 +67,8 @@ Iron Beams
 Rusted varients 1/4 
 Waxed varients for all
 Iron Cable
+THESE ARE FOR LATER.
+
 
 Give credit to Modding by Kaupenjoe for tutorials
 Give credit to ordanarymods which is the rustable iron texture used (If I use it) They are now immersive weathering.
