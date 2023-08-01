@@ -45,6 +45,9 @@ Flint n steel      Will just take wax off
 
 The doors and Trap doors Does not require redstone.
 
+Heated block stage 1 damage = Same as magma block damage 
+Heated block stage 2 damage = Twice as much damage as magma block
+Heated block stage 3 damage = Three times as much damage as magma block
 Heating the metal mechanic. for Wrought iron and Refined Wrought iron
 When placed above lava instead of rusting it can heat up a level(3 levels up just like rust or oxidation)
 Each one turning the metal more glowy red color, and each level increases damage they do when coming into contact with it like magma blocks?
@@ -56,10 +59,11 @@ If slime is rightclick on it(removes the gravity) If waterbottle is rightclicked
 
 Weight block(custom model). Whatever block you place this block on, will give it gravity and push it down.
 
-slag          You get from refining?
+slag          You get from refining? 50% chance.
 In order to refine, you need Vanilla Blast furnace.
 
-Refined Wrought Iron 			Pressure pad/button
+World generation in chunks of like 12-16 blocks roundish, can generate any level above deepslate but if exposed to air random the rust on it.
+About as common as iron in terms of each spawn. Obviously it has 12-16 so it will naturally be more common.
 
 
 THESE ARE FOR LATER.
