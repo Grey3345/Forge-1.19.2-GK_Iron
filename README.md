@@ -35,10 +35,10 @@ Refined Wrought Iron Crafting	    All the blocks and items.
 Refined Wrought Iron Tools        Tongs allows you to pickup the hot iron(instantly breaks them) If tried to mine with pickaxe, it hurts you and has a chance to set you on fire.
 
 Black Painted Wrought Iron_______________	________________ Cannot be heated or rusted.
-Black Painted Wrought Iron		        Block/Stairs/Slab/wall/bars/beams/door/trapdoor
-Black Painted Trimmed Wrought Iron	  Block/Stairs/Slab/wall/bars/beams/door/trapdoor
-Fence 					  flat/spike/fancy
-Fence gate 				flat/spike/fancy
+Black Painted Wrought Iron		                Block/Stairs/Slab/wall/bars/beams/door/trapdoor
+Black Painted Trimmed Wrought Iron	          Block/Stairs/Slab/wall/bars/beams/door/trapdoor
+Black Painted Wrought Iron Fence 					    flat/spike/fancy
+Black Painted Wrought Iron Fence gate 				flat/spike/fancy
 
 sandpaper          Cleans rust off and Wax        Will see maybe add this to copper cleaning?
 Flint n steel      Will just take wax off
