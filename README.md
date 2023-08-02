@@ -9,7 +9,7 @@ Also didn't want to mess with base iron to much, aslo it has ugly texture.
 
 Formed Wrought Iron _______________________________
 
-Wrought Iron 			            Block/Stairs/Slab/Wall/Bars/Beams
+Wrought Iron 			            Block/Stairs/Slab/Wall/Bars/Beams/door/trapdoor
 Wrought Iron Plated		        Block/Stairs/Slab/wall
 Wrought Iron Chiselled		    Block
 Wrought Iron Cut		          Block/Stairs/Slab/wall/beams
