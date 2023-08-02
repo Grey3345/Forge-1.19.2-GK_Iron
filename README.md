@@ -49,6 +49,7 @@ The doors and Trap doors Does not require redstone.
 Heated block stage 1 damage = Same as magma block damage 
 Heated block stage 2 damage = Twice as much damage as magma block
 Heated block stage 3 damage = Three times as much damage as magma block
+If you throw heated blocks into water they emmediatly become cooled and return to default state.
 Heating the metal mechanic. for Wrought iron and Refined Wrought iron
 When placed above lava instead of rusting it can heat up a level(3 levels up just like rust or oxidation)
 Each one turning the metal more glowy red color, and each level increases damage they do when coming into contact with it like magma blocks?
