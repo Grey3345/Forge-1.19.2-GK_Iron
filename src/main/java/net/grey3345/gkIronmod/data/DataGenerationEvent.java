@@ -16,6 +16,7 @@ public class DataGenerationEvent {
         DataGenerator generator = event.getGenerator();
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
+        // @TODO all items and blocks require textures for this to work correctly
         generator.addProvider(true, new ModelProviderItem(generator,existingFileHelper));
         generator.addProvider(true, new SoundDataGeneration(generator,existingFileHelper));
         generator.addProvider(true, new LangGenEnglish(generator));

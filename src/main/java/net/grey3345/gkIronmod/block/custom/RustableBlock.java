@@ -21,6 +21,7 @@ package net.grey3345.gkIronmod.block.custom;
         import net.minecraft.world.level.block.WeatheringCopper;
         import net.minecraft.world.level.block.state.BlockState;
         import net.minecraft.world.phys.BlockHitResult;
+        import org.jetbrains.annotations.Nullable;
 
         import java.util.Optional;
         import java.util.Random;
@@ -36,52 +37,73 @@ public class RustableBlock extends Block implements WeatheringCopper {
 
     @Override
     public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-        var stack = player.getItemInHand(hand);
+        ItemStack stack = player.getItemInHand(hand);
         if (stack.getItem() == Items.HONEYCOMB) {
-            var block = RustStateMap.getWaxed(state.getBlock());
-            if (block.isPresent()) {
-                world.setBlock(pos, block.map(b -> b.withPropertiesOf(state)).get(), 11);
-                world.levelEvent(player, 3003, pos, 0);
-                stack.shrink(1);
-                return InteractionResult.SUCCESS;
-            }
+            setWaxed(state,world,pos,player,hand);
         } else
         if (stack.getItem() == Items.FLINT_AND_STEEL){
-            var block = RustStateMap.getUnwaxed(state.getBlock());
-            var damage = player.getItemInHand(hand);
-            if (block.isPresent()) {
-                world.setBlock(pos, block.map(b -> b.withPropertiesOf(state)).get(), 11);
-                world.levelEvent(player, 3003, pos, 0);
-                stack.setDamageValue(damage.getDamageValue() +1);
-                //stack.shrink(1);
-                return InteractionResult.SUCCESS;
-            }
+            setUnwaxed(state,world,pos,player,hand);
         } else
         if (stack.getItem() == ModItems.SAND_PAPER.get()){
-            var block = RustStateMap.getDecrease(state.getBlock());
-            //var damage = player.getItemInHand(hand);
-            if (block.isPresent()) {
-                world.setBlock(pos, block.map(b -> b.withPropertiesOf(state)).get(), 11);
-                world.levelEvent(player, 3003, pos, 0);
-                //stack.setDamageValue(damage.getDamageValue() +1);
-                stack.shrink(1);
-                return InteractionResult.SUCCESS;
-
-
-            }
+            decreaseStage(state,world,pos,player,hand);
         }
         return InteractionResult.PASS;
     }
 
+    public static void decreaseStage(BlockState state, Level world, BlockPos pos, @Nullable Player player, @Nullable InteractionHand hand) {
+        Optional<Block> block = RustStateMap.getDecrease(state.getBlock());
+        if (block.isPresent()) {
+            world.setBlock(pos, block.map(b -> b.withPropertiesOf(state)).get(), 11);
+            world.levelEvent(player, 3003, pos, 0);
+            if (player != null) {
+                world.levelEvent(player, 3003, pos, 0);
+                player.getItemInHand(hand != null ? hand : InteractionHand.MAIN_HAND).shrink(1);
+            }
+        }
+    }
+
+    public static void decreaseStage(BlockState state, Level world, BlockPos pos) {
+        decreaseStage(state,world,pos,null,null);
+    }
+
+    public static void setWaxed(BlockState state, Level world, BlockPos pos, @Nullable Player player, @Nullable InteractionHand hand) {
+        Optional<Block> block = RustStateMap.getWaxed(state.getBlock());
+        if (block.isPresent()) {
+            world.setBlock(pos, block.map(b -> b.withPropertiesOf(state)).get(), 11);
+            if (player != null) {
+                world.levelEvent(player, 3003, pos, 0);
+                player.getItemInHand(hand != null ? hand : InteractionHand.MAIN_HAND).shrink(1);
+            }
+        }
+    }
+
+    public static void setWaxed(BlockState state, Level world, BlockPos pos) {
+        setWaxed(state,world,pos,null,null);
+    }
+
+    public static void setUnwaxed(BlockState state, Level world, BlockPos pos, @Nullable Player player, @Nullable InteractionHand hand) {
+        Optional<Block> block = RustStateMap.getUnwaxed(state.getBlock());
+        if (block.isPresent()) {
+            world.setBlock(pos, block.map(b -> b.withPropertiesOf(state)).get(), 11);
+            if (player != null) {
+                world.levelEvent(player, 3003, pos, 0);
+                ItemStack stack = player.getItemInHand(hand != null ? hand : InteractionHand.MAIN_HAND);
+                stack.setDamageValue(stack.getDamageValue() + 1);
+            }
+        }
+    }
+
+    public static void setUnwaxed(BlockState state, Level world, BlockPos pos) {
+        setUnwaxed(state,world,pos,null,null);
+    }
 
     @Override
     public Optional<BlockState> getNext(BlockState state) {
         return RustStateMap.getIncrease(state.getBlock()).map((block) -> block.withPropertiesOf(state));
     }
 
-    //@Override
-    public void randomTick(BlockState state, ServerLevel serverWorld, BlockPos pos, Random random) {
-        this.onRandomTick(state, serverWorld, pos, (RandomSource) random);
+    public void randomTick(BlockState p_222675_, ServerLevel p_222676_, BlockPos p_222677_, RandomSource p_222678_) {
+        this.onRandomTick(p_222675_, p_222676_, p_222677_, p_222678_);
     }
 
     @Override

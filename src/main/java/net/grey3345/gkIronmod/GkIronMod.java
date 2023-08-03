@@ -2,11 +2,18 @@ package net.grey3345.gkIronmod;
 
 import com.mojang.logging.LogUtils;
 import net.grey3345.gkIronmod.block.ModBlocks;
+import net.grey3345.gkIronmod.data.BlockStateGenerator;
+import net.grey3345.gkIronmod.data.SoundDataGeneration;
+import net.grey3345.gkIronmod.data.client.LangGenEnglish;
+import net.grey3345.gkIronmod.data.client.ModelProviderItem;
 import net.grey3345.gkIronmod.item.ModItems;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -31,13 +38,12 @@ public class GkIronMod {
     // Very Important Comment
     public GkIronMod() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        MinecraftForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
-
-        MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

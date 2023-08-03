@@ -28,6 +28,10 @@ public class RustStateMap {
         UNWAXED.put(waxed, block);
     }
 
+    public static void put(Block block, Block waxed) {
+        put(block,null,waxed);
+    }
+
     public static Optional<Block> getIncrease(Block block) {
         return Optional.ofNullable(INCREASES.get(block));
     }

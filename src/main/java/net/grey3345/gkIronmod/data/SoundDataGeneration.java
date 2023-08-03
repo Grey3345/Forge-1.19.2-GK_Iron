@@ -10,7 +10,7 @@ import net.minecraftforge.common.data.SoundDefinitionsProvider;
 
 public class SoundDataGeneration extends SoundDefinitionsProvider {
 
-    protected SoundDataGeneration(DataGenerator output, ExistingFileHelper helper) {
+    public SoundDataGeneration(DataGenerator output, ExistingFileHelper helper) {
         super(output, GkIronMod.MOD_ID, helper);
     }
 

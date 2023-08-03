@@ -2,6 +2,7 @@ package net.grey3345.gkIronmod.block;
 
 import net.grey3345.gkIronmod.GkIronMod;
 import net.grey3345.gkIronmod.block.custom.RustableBlock;
+import net.grey3345.gkIronmod.block.custom.RustableStairBlock;
 import net.grey3345.gkIronmod.item.ModCreativeModeTab;
 import net.grey3345.gkIronmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
@@ -70,22 +71,22 @@ public class ModBlocks {
 
     // Formed wrought Iron Various blocks
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_STAIRS = BLOCKS.register("wrought_iron_block_stairs",
-            () -> new RustableBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK.get().defaultBlockState(),BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_STAIRS_EXPOSED = BLOCKS.register("wrought_iron_block_stairs_exposed",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_EXPOSED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_STAIRS_WEATHERED = BLOCKS.register("wrought_iron_block_stairs_weathered",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_WEATHERED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_STAIRS_RUSTED = BLOCKS.register("wrought_iron_block_stairs_rusted",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_RUSTED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_STAIRS_WAXED = BLOCKS.register("wrought_iron_block_stairs_waxed",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.UNAFFECTED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_WAXED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.UNAFFECTED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_STAIRS_EXPOSED_WAXED = BLOCKS.register("wrought_iron_block_stairs_exposed_waxed",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_EXPOSED_WAXED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_STAIRS_WEATHERED_WAXED = BLOCKS.register("wrought_iron_block_stairs_weathered_waxed",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_WEATHERED_WAXED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_STAIRS_RUSTED_WAXED = BLOCKS.register("wrought_iron_block_stairs_rusted_waxed",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_RUSTED_WAXED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_SLAB = BLOCKS.register("wrought_iron_block_slab",
             () -> new RustableBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
@@ -221,22 +222,22 @@ public class ModBlocks {
 
     // Formed wrought Iron Plated Stairs
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PLATED_STAIRS = BLOCKS.register("wrought_iron_block_planted_stairs",
-            () -> new RustableBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_PLATED.get().defaultBlockState(),BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PLATED_STAIRS_EXPOSED = BLOCKS.register("wrought_iron_block_planted_stairs_exposed",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_PLATED_EXPOSED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PLATED_STAIRS_WEATHERED = BLOCKS.register("wrought_iron_block_planted_stairs_weathered",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_PLATED_WEATHERED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PLATED_STAIRS_RUSTED = BLOCKS.register("wrought_iron_block_planted_stairs_rusted",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_PLATED_RUSTED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PLATED_STAIRS_WAXED = BLOCKS.register("wrought_iron_block_planted_stairs_waxed",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.UNAFFECTED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_PLATED_WAXED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.UNAFFECTED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PLATED_STAIRS_EXPOSED_WAXED = BLOCKS.register("wrought_iron_block_planted_stairs_exposed_waxed",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_PLATED_EXPOSED_WAXED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PLATED_STAIRS_WEATHERED_WAXED = BLOCKS.register("wrought_iron_block_planted_stairs_weathered_waxed",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_PLATED_WEATHERED_WAXED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PLATED_STAIRS_RUSTED_WAXED = BLOCKS.register("wrought_iron_block_planted_stairs_rusted_waxed",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_PLATED_RUSTED_WAXED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     // Formed wrought Iron Plated Slab
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_PLATED_SLAB = BLOCKS.register("wrought_iron_block_planted_slab",
@@ -298,22 +299,22 @@ public class ModBlocks {
 
     // Formed wrought Iron cut Stairs
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_CUT_STAIRS = BLOCKS.register("wrought_iron_block_cut_stairs",
-            () -> new RustableBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_CUT.get().defaultBlockState(),BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_CUT_STAIRS_EXPOSED = BLOCKS.register("wrought_iron_block_cut_stairs_exposed",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_CUT_EXPOSED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_CUT_STAIRS_WEATHERED = BLOCKS.register("wrought_iron_block_cut_stairs_weathered",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_CUT_WEATHERED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_CUT_STAIRS_RUSTED = BLOCKS.register("wrought_iron_block_cut_stairs_rusted",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_CUT_RUSTED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_CUT_STAIRS_WAXED = BLOCKS.register("wrought_iron_block_cut_stairs_waxed",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.UNAFFECTED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_CUT_WAXED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.UNAFFECTED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_CUT_STAIRS_EXPOSED_WAXED = BLOCKS.register("wrought_iron_block_cut_stairs_exposed_waxed",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_CUT_EXPOSED_WAXED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_CUT_STAIRS_WEATHERED_WAXED = BLOCKS.register("wrought_iron_block_cut_stairs_weathered_waxed",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_CUT_WEATHERED_WAXED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_CUT_STAIRS_RUSTED_WAXED = BLOCKS.register("wrought_iron_block_cut_stairs_rusted_waxed",
-            () -> new RustableBlock(Block.Properties.copy(WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
+            () -> new RustableStairBlock(() -> WROUGHT_IRON_BLOCK_CUT_RUSTED_WAXED.get().defaultBlockState(),Block.Properties.copy(WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     // Formed wrought Iron cut Slab
     public static final RegistryObject<Block> WROUGHT_IRON_BLOCK_CUT_SLAB = BLOCKS.register("wrought_iron_block_cut_slab",
@@ -394,22 +395,22 @@ public class ModBlocks {
 
     // Formed wrought Iron Various blocks
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_STAIRS = BLOCKS.register("refined_wrought_iron_block_stairs",
-            () -> new RustableBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK.get().defaultBlockState(),BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_STAIRS_EXPOSED = BLOCKS.register("refined_wrought_iron_block_stairs_exposed",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_EXPOSED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_STAIRS_WEATHERED = BLOCKS.register("refined_wrought_iron_block_stairs_weathered",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_WEATHERED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_STAIRS_RUSTED = BLOCKS.register("refined_wrought_iron_block_stairs_rusted",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_RUSTED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_STAIRS_WAXED = BLOCKS.register("refined_wrought_iron_block_stairs_waxed",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.UNAFFECTED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_WAXED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.UNAFFECTED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_STAIRS_EXPOSED_WAXED = BLOCKS.register("refined_wrought_iron_block_stairs_exposed_waxed",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_EXPOSED_WAXED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_STAIRS_WEATHERED_WAXED = BLOCKS.register("refined_wrought_iron_block_stairs_weathered_waxed",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_WEATHERED_WAXED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_STAIRS_RUSTED_WAXED = BLOCKS.register("refined_wrought_iron_block_stairs_rusted_waxed",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_RUSTED_WAXED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_SLAB = BLOCKS.register("refined_wrought_iron_block_slab",
             () -> new RustableBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
@@ -545,22 +546,22 @@ public class ModBlocks {
 
     // Formed wrought Iron Plated Stairs
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS = BLOCKS.register("refined_wrought_iron_block_planted_stairs",
-            () -> new RustableBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_PLATED.get().defaultBlockState(),BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS_EXPOSED = BLOCKS.register("refined_wrought_iron_block_planted_stairs_exposed",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_PLATED_EXPOSED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS_WEATHERED = BLOCKS.register("refined_wrought_iron_block_planted_stairs_weathered",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_PLATED_WEATHERED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS_RUSTED = BLOCKS.register("refined_wrought_iron_block_planted_stairs_rusted",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_PLATED_RUSTED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS_WAXED = BLOCKS.register("refined_wrought_iron_block_planted_stairs_waxed",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.UNAFFECTED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_PLATED_WAXED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.UNAFFECTED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS_EXPOSED_WAXED = BLOCKS.register("refined_wrought_iron_block_planted_stairs_exposed_waxed",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_PLATED_EXPOSED_WAXED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS_WEATHERED_WAXED = BLOCKS.register("refined_wrought_iron_block_planted_stairs_weathered_waxed",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_PLATED_WEATHERED_WAXED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS_RUSTED_WAXED = BLOCKS.register("refined_wrought_iron_block_planted_stairs_rusted_waxed",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_PLATED_RUSTED_WAXED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_PLATED_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     // Formed wrought Iron Plated Slab
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_PLATED_SLAB = BLOCKS.register("refined_wrought_iron_block_planted_slab",
@@ -622,22 +623,22 @@ public class ModBlocks {
 
     // Formed wrought Iron cut Stairs
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS = BLOCKS.register("refined_wrought_iron_block_cut_stairs",
-            () -> new RustableBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_CUT.get().defaultBlockState(),BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.COPPER).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS_EXPOSED = BLOCKS.register("refined_wrought_iron_block_cut_stairs_exposed",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_CUT_EXPOSED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS_WEATHERED = BLOCKS.register("refined_wrought_iron_block_cut_stairs_weathered",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_CUT_WEATHERED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS_RUSTED = BLOCKS.register("refined_wrought_iron_block_cut_stairs_rusted",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_CUT_RUSTED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS_WAXED = BLOCKS.register("refined_wrought_iron_block_cut_stairs_waxed",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.UNAFFECTED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_CUT_WAXED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.UNAFFECTED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS_EXPOSED_WAXED = BLOCKS.register("refined_wrought_iron_block_cut_stairs_exposed_waxed",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_CUT_EXPOSED_WAXED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.EXPOSED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS_WEATHERED_WAXED = BLOCKS.register("refined_wrought_iron_block_cut_stairs_weathered_waxed",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_CUT_WEATHERED_WAXED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.WEATHERED));
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS_RUSTED_WAXED = BLOCKS.register("refined_wrought_iron_block_cut_stairs_rusted_waxed",
-            () -> new RustableBlock(Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
+            () -> new RustableStairBlock(() -> REFINED_WROUGHT_IRON_BLOCK_CUT_RUSTED_WAXED.get().defaultBlockState(),Block.Properties.copy(REFINED_WROUGHT_IRON_BLOCK_CUT_STAIRS.get()), WeatheringCopper.WeatherState.OXIDIZED));
 
     // Formed wrought Iron cut Slab
     public static final RegistryObject<Block> REFINED_WROUGHT_IRON_BLOCK_CUT_SLAB = BLOCKS.register("refined_wrought_iron_block_cut_slab",
