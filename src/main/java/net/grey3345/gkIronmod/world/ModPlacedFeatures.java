@@ -15,7 +15,7 @@ public class ModPlacedFeatures {
 
     public static final RegistryObject<PlacedFeature> RAW_WROUGHT_IRON_PLACED = PLACED_FEATURES.register("raw_wrought_iron_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.RAW_WROUGHT_IRON.getHolder().get(),
-                    commonOrePlacement(16/* this number is how common it will be */, HeightRangePlacement.triangle(VerticalAnchor.absolute(50), VerticalAnchor.absolute(112))))
+                    List.of(RarityFilter.onAverageOnceEvery(1 /* Rarity, Lower means more common */),HeightRangePlacement.triangle(VerticalAnchor.absolute(45), VerticalAnchor.absolute(112))))
             );
 
     private static List<PlacementModifier> orePlacement(PlacementModifier p_195347_, PlacementModifier p_195348_) {
