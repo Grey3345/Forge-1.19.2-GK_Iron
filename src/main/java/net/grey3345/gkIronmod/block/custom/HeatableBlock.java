@@ -1,8 +1,10 @@
 package net.grey3345.gkIronmod.block.custom;
 
+import com.mojang.logging.LogUtils;
 import net.grey3345.gkIronmod.item.ModItems;
 import net.grey3345.gkIronmod.item.custom.FirePokerItem;
 import net.grey3345.gkIronmod.item.custom.TongsItem;
+import net.grey3345.gkIronmod.util.HeatState;
 import net.grey3345.gkIronmod.util.HeatStateMap;
 import net.grey3345.gkIronmod.util.RustStateMap;
 import net.minecraft.core.BlockPos;
@@ -10,6 +12,9 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -22,16 +27,49 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.core.jmx.Server;
+import org.jetbrains.annotations.Nullable;
+import org.jline.utils.Log;
 
 import java.util.Optional;
 import java.util.Random;
 
 public class HeatableBlock extends Block implements WeatheringCopper {
     private final WeatheringCopper.WeatherState weatherState;
+    private HeatState heatState; // Always reference through getHeatState() !!
 
-    public HeatableBlock(BlockBehaviour.Properties properties, WeatheringCopper.WeatherState weatherState) {
+    /**
+     * Not recommended, may cause errors , replace with the other init @TODO
+     * @param properties
+     * @param state
+     */
+    @Deprecated()
+    public HeatableBlock(BlockBehaviour.Properties properties, WeatheringCopper.WeatherState state) {
+        this(properties,state,null);
+    }
+
+    public HeatableBlock(BlockBehaviour.Properties properties, WeatheringCopper.WeatherState weatherState, @Nullable HeatState state) {
         super(properties);
         this.weatherState = weatherState;
+        this.heatState = state;
+    }
+
+    public HeatState getHeatState() {
+        if (this.heatState == null) {
+            this.heatState = HeatStateMap.getStateFromBlockName(this);
+            if (this.heatState == null) {
+                throw new NullPointerException("getHeatState() FAILED!");
+            }
+        }
+        return this.heatState;
+    }
+
+    @Override
+    public void stepOn(Level level, BlockPos pos, BlockState state, Entity entity) {
+        if (entity instanceof LivingEntity) {
+            entity.hurt(DamageSource.HOT_FLOOR,this.getHeatState().damage);
+        }
+
+        super.stepOn(level, pos, state, entity);
     }
 
     @Override

@@ -13,8 +13,6 @@ import java.util.Optional;
 import java.util.Random;
 
 public class HeatStateMap {
-
-
     private static final Map<Block, Block> HEATED = new HashMap<>();
 
     private static final Map<Block, Block> COOLED = new HashMap<>();
@@ -22,6 +20,18 @@ public class HeatStateMap {
     private static final Map<Block, Block> TREATED = new HashMap<>();
 
     private static final Map<Block, Block> UNTREATED = new HashMap<>();
+
+    public static HeatState getStateFromBlockName(Block block) {
+        String id = block.getDescriptionId().toLowerCase();
+        int pos = -1;
+
+        for (HeatState state : HeatState.values()) {
+            pos = id.indexOf(state.toString().toLowerCase());
+            if (pos == -1) continue;
+            return state;
+        }
+        return null;
+    }
 
     public static void put(Block block, @Nullable Block heated, Block waxed) {
         if (heated != null) {
