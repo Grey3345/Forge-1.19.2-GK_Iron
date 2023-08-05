@@ -1,6 +1,8 @@
 package net.grey3345.gkIronmod.block.custom;
 
 import net.grey3345.gkIronmod.item.ModItems;
+import net.grey3345.gkIronmod.item.custom.FirePokerItem;
+import net.grey3345.gkIronmod.item.custom.TongsItem;
 import net.grey3345.gkIronmod.util.HeatStateMap;
 import net.grey3345.gkIronmod.util.RustStateMap;
 import net.minecraft.core.BlockPos;
@@ -19,6 +21,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.fml.common.Mod;
+import org.apache.logging.log4j.core.jmx.Server;
 
 import java.util.Optional;
 import java.util.Random;
@@ -29,6 +32,18 @@ public class HeatableBlock extends Block implements WeatheringCopper {
     public HeatableBlock(BlockBehaviour.Properties properties, WeatheringCopper.WeatherState weatherState) {
         super(properties);
         this.weatherState = weatherState;
+    }
+
+    @Override
+    public void attack(BlockState state, Level level, BlockPos pos, Player player) {
+        if ((player.getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof TongsItem || player.getItemInHand(InteractionHand.OFF_HAND).getItem() instanceof TongsItem) && level instanceof ServerLevel serverLevel) {
+            serverLevel.destroyBlock(pos,true,player);
+        }
+        if (player.getItemInHand(InteractionHand.MAIN_HAND).getItem() instanceof FirePokerItem || player.getItemInHand(InteractionHand.OFF_HAND).getItem() instanceof FirePokerItem) {
+            FirePokerItem.moveHeatBlock(level,pos,player.getDirection());
+        }
+
+        super.attack(state, level, pos, player);
     }
 
     @Override

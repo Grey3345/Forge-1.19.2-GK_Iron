@@ -2,10 +2,13 @@ package net.grey3345.gkIronmod.item;
 
 import net.grey3345.gkIronmod.GkIronMod;
 import net.grey3345.gkIronmod.block.ModBlocks;
+import net.grey3345.gkIronmod.item.custom.FirePokerItem;
 import net.grey3345.gkIronmod.item.custom.ModBlockItem;
+import net.grey3345.gkIronmod.item.custom.TongsItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -71,6 +74,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> SAND_PAPER = ITEMS.register("sand_paper",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.GKIRON_TAB)));
+
+    // DUZO TEST ITEMS REPLACE WITH YOUR OWN IF NECESSARY
+    public static final RegistryObject<Item> FIRE_POKER = ITEMS.register("fire_poker", () -> new FirePokerItem(new Item.Properties().tab(ModCreativeModeTab.GKIRON_TAB)));
+    public static final RegistryObject<Item> TONGS = ITEMS.register("tongs", () -> new TongsItem(new Item.Properties().tab(ModCreativeModeTab.GKIRON_TAB)));
 
     public ModItems(Block block, Item.Properties properties) {
 
