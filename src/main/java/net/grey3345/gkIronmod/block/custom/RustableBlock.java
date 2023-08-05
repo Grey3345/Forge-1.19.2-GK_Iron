@@ -19,6 +19,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ChangeOverTimeBlock;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
@@ -105,15 +106,52 @@ public class RustableBlock extends Block implements WeatheringCopper {
 
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (level.getBlockState(pos.below()).is(Blocks.LAVA)) {
-            // Set to heated block if below is lava
-            // Only if random chance happens
-            if (random.nextFloat() < 0.05688889F) {
+        this.onRandomTick(state, level, pos, random);
+    }
+
+    @Override
+    public void applyChangeOverTime(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        int i = this.getAge().ordinal();
+        int j = 0;
+        int k = 0;
+
+        for(BlockPos blockpos : BlockPos.withinManhattan(pos, 4, 4, 4)) {
+            int l = blockpos.distManhattan(pos);
+            if (l > 4) {
+                break;
+            }
+
+            if (!blockpos.equals(pos)) {
+                BlockState blockstate = level.getBlockState(blockpos);
+                Block block = blockstate.getBlock();
+                if (block instanceof ChangeOverTimeBlock) {
+                    Enum<?> oenum = ((ChangeOverTimeBlock)block).getAge();
+                    if (this.getAge().getClass() == oenum.getClass()) {
+                        int i1 = oenum.ordinal();
+                        if (i1 < i) {
+                            return;
+                        }
+
+                        if (i1 > i) {
+                            ++k;
+                        } else {
+                            ++j;
+                        }
+                    }
+                }
+            }
+        }
+
+        float f = (float)(k + 1) / (float)(k + j + 1);
+        float f1 = f * f * this.getChanceModifier();
+        if (random.nextFloat() < f1) {
+            // Heat up
+            if (HeatStateMap.getHeated(state.getBlock()).isPresent()) {
                 level.setBlock(pos, HeatStateMap.getHeated(state.getBlock()).get().defaultBlockState(), 3);
             }
-            return;
         }
-        this.onRandomTick(state, level, pos, random);
+
+        WeatheringCopper.super.applyChangeOverTime(state, level, pos, random);
     }
 
     @Override

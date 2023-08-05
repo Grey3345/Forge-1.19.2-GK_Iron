@@ -19,10 +19,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.BubbleColumnBlock;
-import net.minecraft.world.level.block.WeatheringCopper;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
@@ -129,19 +126,6 @@ public class HeatableBlock extends Block implements WeatheringCopper {
 
     @Override
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        if (level.getBlockState(pos.below()).is(Blocks.LAVA)) {
-            // Keep heating
-            // Only if random chance happens
-            if (random.nextFloat() < 0.05688889F) {
-                level.setBlock(pos, HeatStateMap.getHeated(state.getBlock()).get().defaultBlockState(), 3);
-            }
-        } else {
-            // No heat, cool
-            // Only if random chance happens
-            if (random.nextFloat() < 0.05688889F) {
-                level.setBlock(pos, HeatStateMap.getCooled(state.getBlock()).get().defaultBlockState(), 3);
-            }
-        }
         this.onRandomTick(state, level, pos, random);
         this.tick(state,level,pos,random);
     }
@@ -152,6 +136,58 @@ public class HeatableBlock extends Block implements WeatheringCopper {
         // if no lava getCooled
         // if cooling to no heat at all, return to rustable block
         return HeatStateMap.getHeated(state.getBlock()).isPresent();
+    }
+
+    @Override
+    public void applyChangeOverTime(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        int i = this.getAge().ordinal();
+        int j = 0;
+        int k = 0;
+
+        for(BlockPos blockpos : BlockPos.withinManhattan(pos, 4, 4, 4)) {
+            int l = blockpos.distManhattan(pos);
+            if (l > 4) {
+                break;
+            }
+
+            if (!blockpos.equals(pos)) {
+                BlockState blockstate = level.getBlockState(blockpos);
+                Block block = blockstate.getBlock();
+                if (block instanceof ChangeOverTimeBlock) {
+                    Enum<?> oenum = ((ChangeOverTimeBlock)block).getAge();
+                    if (this.getAge().getClass() == oenum.getClass()) {
+                        int i1 = oenum.ordinal();
+                        if (i1 < i) {
+                            return;
+                        }
+
+                        if (i1 > i) {
+                            ++k;
+                        } else {
+                            ++j;
+                        }
+                    }
+                }
+            }
+        }
+
+        float f = (float)(k + 1) / (float)(k + j + 1);
+        float f1 = f * f * this.getChanceModifier();
+        if (random.nextFloat() < f1) {
+            if (level.getBlockState(pos.below()).is(Blocks.LAVA)) {
+                // Keep heating
+                if (HeatStateMap.getHeated(state.getBlock()).isPresent()) {
+                    level.setBlock(pos, HeatStateMap.getHeated(state.getBlock()).get().defaultBlockState(), 3);
+                }
+            } else {
+                // No heat, cool
+                if (HeatStateMap.getCooled(state.getBlock()).isPresent()) {
+                    level.setBlock(pos, HeatStateMap.getCooled(state.getBlock()).get().defaultBlockState(), 3);
+                }
+            }
+        }
+
+        WeatheringCopper.super.applyChangeOverTime(state, level, pos, random);
     }
 
     @Override
