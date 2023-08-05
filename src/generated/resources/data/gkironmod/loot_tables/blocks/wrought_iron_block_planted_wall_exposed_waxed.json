@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "gkironmod:wrought_iron_block_planted_wall_exposed_waxed"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

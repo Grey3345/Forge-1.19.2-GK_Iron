@@ -41,7 +41,7 @@ public class GkIronMod {
         MinecraftForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
+        ModBlocks.BLOCKS.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
     }
