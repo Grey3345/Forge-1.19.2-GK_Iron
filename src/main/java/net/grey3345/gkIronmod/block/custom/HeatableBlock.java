@@ -34,7 +34,7 @@ public class HeatableBlock extends Block implements WeatheringCopper {
     @Override
     public InteractionResult use(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         var stack = player.getItemInHand(hand);
-        if (stack.getItem() == ModItems.SMALL_SAND_PILE.get()) {
+        if (stack.getItem() == Items.SAND) {
             var block = HeatStateMap.getTreated(state.getBlock());
             if (block.isPresent()) {
                 world.setBlock(pos, block.map(b -> b.withPropertiesOf(state)).get(), 11);

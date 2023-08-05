@@ -2,6 +2,7 @@ package net.grey3345.gkIronmod;
 
 import com.mojang.logging.LogUtils;
 import net.grey3345.gkIronmod.block.ModBlocks;
+import net.grey3345.gkIronmod.block.entities.ModBlockEntities;
 import net.grey3345.gkIronmod.data.BlockStateGenerator;
 import net.grey3345.gkIronmod.data.SoundDataGeneration;
 import net.grey3345.gkIronmod.data.client.LangGenEnglish;
@@ -11,6 +12,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -42,6 +44,7 @@ public class GkIronMod {
 
         ModItems.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
+        ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
     }
@@ -56,6 +59,10 @@ public class GkIronMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             //ItemBlockRenderTypes.setRenderLayer(ModBlocks.BLUEBERRY_CROP.get(), RenderType.cutout());
+        }
+        @SubscribeEvent
+        public static void registerRenderers(EntityRenderersEvent.RegisterRenderers renderers) {
+//            renderers.registerBlockEntityRenderer(ModBlockEntities.WEIGHT_BLOCK_ENTITY.get(), ::new);
         }
     }
 }

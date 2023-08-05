@@ -1103,9 +1103,10 @@ public class ModBlocks {
 
     // DUZO TESTING REMOVE WHEN DONE @TODO
     public static final RegistryObject<Block> METAL_GRAVEL = registerBlock("metal_gravel", () -> new MetalGravelBlock(BlockBehaviour.Properties.of(Material.METAL)), ModCreativeModeTab.GKIRON_TAB);
+    public static final RegistryObject<Block> WEIGHT_BLOCK = registerBlock("weight_block", () -> new WeightBlock(BlockBehaviour.Properties.of(Material.METAL)), ModCreativeModeTab.GKIRON_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
-        return registerBlock(name, block, null);
+        return registerBlock(name, block, ModCreativeModeTab.GKIRON_TAB);
     }
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, @Nullable CreativeModeTab tab) {
