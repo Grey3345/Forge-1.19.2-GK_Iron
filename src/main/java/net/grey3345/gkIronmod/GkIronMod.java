@@ -8,6 +8,8 @@ import net.grey3345.gkIronmod.data.SoundDataGeneration;
 import net.grey3345.gkIronmod.data.client.LangGenEnglish;
 import net.grey3345.gkIronmod.data.client.ModelProviderItem;
 import net.grey3345.gkIronmod.item.ModItems;
+import net.grey3345.gkIronmod.world.ModConfiguredFeatures;
+import net.grey3345.gkIronmod.world.ModPlacedFeatures;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -45,6 +47,8 @@ public class GkIronMod {
         ModItems.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
         ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
+        ModConfiguredFeatures.CONFIGURED_FEATURES.register(modEventBus);
+        ModPlacedFeatures.PLACED_FEATURES.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
     }
