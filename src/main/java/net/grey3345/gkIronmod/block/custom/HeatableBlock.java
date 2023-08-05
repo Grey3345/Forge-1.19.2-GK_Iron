@@ -131,10 +131,16 @@ public class HeatableBlock extends Block implements WeatheringCopper {
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (level.getBlockState(pos.below()).is(Blocks.LAVA)) {
             // Keep heating
-            level.setBlock(pos, HeatStateMap.getHeated(state.getBlock()).get().defaultBlockState(),3);
+            // Only if random chance happens
+            if (random.nextFloat() < 0.05688889F) {
+                level.setBlock(pos, HeatStateMap.getHeated(state.getBlock()).get().defaultBlockState(), 3);
+            }
         } else {
             // No heat, cool
-            level.setBlock(pos, HeatStateMap.getCooled(state.getBlock()).get().defaultBlockState(),3);
+            // Only if random chance happens
+            if (random.nextFloat() < 0.05688889F) {
+                level.setBlock(pos, HeatStateMap.getCooled(state.getBlock()).get().defaultBlockState(), 3);
+            }
         }
         this.onRandomTick(state, level, pos, random);
         this.tick(state,level,pos,random);

@@ -103,13 +103,17 @@ public class RustableBlock extends Block implements WeatheringCopper {
         return RustStateMap.getIncrease(state.getBlock()).map((block) -> block.withPropertiesOf(state));
     }
 
-    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource p_222678_) {
+    @Override
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         if (level.getBlockState(pos.below()).is(Blocks.LAVA)) {
             // Set to heated block if below is lava
-            level.setBlock(pos, HeatStateMap.getHeated(state.getBlock()).get().defaultBlockState(),3);
+            // Only if random chance happens
+            if (random.nextFloat() < 0.05688889F) {
+                level.setBlock(pos, HeatStateMap.getHeated(state.getBlock()).get().defaultBlockState(), 3);
+            }
             return;
         }
-        this.onRandomTick(state, level, pos, p_222678_);
+        this.onRandomTick(state, level, pos, random);
     }
 
     @Override
