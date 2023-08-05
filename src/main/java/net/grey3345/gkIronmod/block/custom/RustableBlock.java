@@ -3,6 +3,7 @@ package net.grey3345.gkIronmod.block.custom;
         import net.grey3345.gkIronmod.GkIronMod;
         import net.grey3345.gkIronmod.item.ModItems;
         import net.grey3345.gkIronmod.item.custom.ModBlockItem;
+        import net.grey3345.gkIronmod.util.HeatStateMap;
         import net.grey3345.gkIronmod.util.RustStateMap;
         import net.minecraft.advancements.CriteriaTriggers;
         import net.minecraft.core.BlockPos;
@@ -105,7 +106,7 @@ public class RustableBlock extends Block implements WeatheringCopper {
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource p_222678_) {
         if (level.getBlockState(pos.below()).is(Blocks.LAVA)) {
             // Set to heated block if below is lava
-            level.setBlock(pos,state,3); // Replace state parameter  with the heated blocks state when they are implemented.
+            level.setBlock(pos, HeatStateMap.getHeated(state.getBlock()).get().defaultBlockState(),3); // Replace state parameter  with the heated blocks state when they are implemented.
             return;
         }
         this.onRandomTick(state, level, pos, p_222678_);
