@@ -1,6 +1,7 @@
 package net.grey3345.gkIronmod.block;
 
 import net.grey3345.gkIronmod.GkIronMod;
+import net.grey3345.gkIronmod.block.custom.MetalGravelBlock;
 import net.grey3345.gkIronmod.block.custom.RustableBlock;
 import net.grey3345.gkIronmod.block.custom.RustableStairBlock;
 import net.grey3345.gkIronmod.item.ModCreativeModeTab;
@@ -732,6 +733,9 @@ public class ModBlocks {
                     .strength(6f).requiresCorrectToolForDrops()), ModCreativeModeTab.GKIRON_TAB);
 
     //endregion
+
+    // DUZO TESTING REMOVE WHEN DONE @TODO
+    public static final RegistryObject<Block> METAL_GRAVEL = registerBlock("metal_gravel",() -> new MetalGravelBlock(BlockBehaviour.Properties.of(Material.METAL)),ModCreativeModeTab.GKIRON_TAB);
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         return registerBlock(name,block,null);
