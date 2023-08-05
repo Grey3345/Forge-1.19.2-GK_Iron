@@ -21,6 +21,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.BubbleColumnBlock;
 import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -48,7 +49,7 @@ public class HeatableBlock extends Block implements WeatheringCopper {
     }
 
     public HeatableBlock(BlockBehaviour.Properties properties, WeatheringCopper.WeatherState weatherState, @Nullable HeatState state) {
-        super(properties);
+        super(properties.randomTicks());
         this.weatherState = weatherState;
         this.heatState = state;
     }
@@ -126,9 +127,17 @@ public class HeatableBlock extends Block implements WeatheringCopper {
         return HeatStateMap.getHeated(state.getBlock()).map((block) -> block.withPropertiesOf(state));
     }
 
-    //@Override
-    public void randomTick(BlockState state, ServerLevel serverWorld, BlockPos pos, Random random) {
-        this.onRandomTick(state, serverWorld, pos, (RandomSource) random);
+    @Override
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (level.getBlockState(pos.below()).is(Blocks.LAVA)) {
+            // Keep heating
+            level.setBlock(pos, HeatStateMap.getHeated(state.getBlock()).get().defaultBlockState(),3);
+        } else {
+            // No heat, cool
+            level.setBlock(pos, HeatStateMap.getCooled(state.getBlock()).get().defaultBlockState(),3);
+        }
+        this.onRandomTick(state, level, pos, random);
+        this.tick(state,level,pos,random);
     }
 
     @Override
@@ -142,5 +151,18 @@ public class HeatableBlock extends Block implements WeatheringCopper {
     @Override
     public WeatheringCopper.WeatherState getAge() {
         return this.weatherState;
+    }
+
+    @Override
+    public void onPlace(BlockState p_60566_, Level p_60567_, BlockPos p_60568_, BlockState p_60569_, boolean p_60570_) {
+        if (p_60567_ instanceof ServerLevel serverLevel) {
+            this.tick(p_60566_, serverLevel, p_60568_, RandomSource.create());
+        }
+
+        super.onPlace(p_60566_, p_60567_, p_60568_, p_60569_, p_60570_);
+    }
+
+    public void tick(BlockState p_221415_, ServerLevel p_221416_, BlockPos p_221417_, RandomSource p_221418_) {
+        CustomBubbleColumnBlock.updateColumn(p_221416_, p_221417_.above(), p_221415_);
     }
 }

@@ -1100,6 +1100,7 @@ public class ModBlocks {
             () -> new HeatableBlock(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_ORANGE).requiresCorrectToolForDrops().strength(3.0F, 6.0F).sound(SoundType.METAL).randomTicks(), WeatheringCopper.WeatherState.UNAFFECTED));
     //endregion
 
+    public static final RegistryObject<Block> CUSTOM_BUBBLES = BLOCKS.register("custom_bubbles", () -> new CustomBubbleColumnBlock(BlockBehaviour.Properties.copy(Blocks.BUBBLE_COLUMN)));
 
     // DUZO TESTING REMOVE WHEN DONE @TODO
     public static final RegistryObject<Block> METAL_GRAVEL = registerBlock("metal_gravel", () -> new MetalGravelBlock(BlockBehaviour.Properties.of(Material.METAL)), ModCreativeModeTab.GKIRON_TAB);

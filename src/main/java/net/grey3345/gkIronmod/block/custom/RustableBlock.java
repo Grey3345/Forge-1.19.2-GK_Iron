@@ -1,38 +1,38 @@
 package net.grey3345.gkIronmod.block.custom;
 
-        import net.grey3345.gkIronmod.GkIronMod;
-        import net.grey3345.gkIronmod.item.ModItems;
-        import net.grey3345.gkIronmod.item.custom.ModBlockItem;
-        import net.grey3345.gkIronmod.util.HeatStateMap;
-        import net.grey3345.gkIronmod.util.RustStateMap;
-        import net.minecraft.advancements.CriteriaTriggers;
-        import net.minecraft.core.BlockPos;
-        import net.minecraft.server.level.ServerLevel;
-        import net.minecraft.server.level.ServerPlayer;
-        import net.minecraft.util.RandomSource;
-        import net.minecraft.world.InteractionHand;
-        import net.minecraft.world.InteractionResult;
-        import net.minecraft.world.entity.player.Player;
-        import net.minecraft.world.item.HoneycombItem;
-        import net.minecraft.world.item.ItemStack;
-        import net.minecraft.world.item.Items;
-        import net.minecraft.world.level.Level;
-        import net.minecraft.world.level.block.Block;
-        import net.minecraft.world.level.block.Blocks;
-        import net.minecraft.world.level.block.WeatheringCopper;
-        import net.minecraft.world.level.block.state.BlockState;
-        import net.minecraft.world.phys.BlockHitResult;
-        import org.jetbrains.annotations.Nullable;
+import net.grey3345.gkIronmod.GkIronMod;
+import net.grey3345.gkIronmod.item.ModItems;
+import net.grey3345.gkIronmod.item.custom.ModBlockItem;
+import net.grey3345.gkIronmod.util.HeatStateMap;
+import net.grey3345.gkIronmod.util.RustStateMap;
+import net.minecraft.advancements.CriteriaTriggers;
+import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.HoneycombItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.WeatheringCopper;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.Nullable;
 
-        import java.util.Optional;
-        import java.util.Random;
+import java.util.Optional;
+import java.util.Random;
 
 public class RustableBlock extends Block implements WeatheringCopper {
 
     private final WeatheringCopper.WeatherState weatherState;
 
     public RustableBlock(Properties properties, WeatheringCopper.WeatherState weatherState) {
-        super(properties);
+        super(properties.randomTicks());
         this.weatherState = weatherState;
     }
 
