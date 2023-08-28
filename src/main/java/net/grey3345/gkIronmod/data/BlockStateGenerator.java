@@ -15,6 +15,8 @@ import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
+import static net.grey3345.gkIronmod.data.DataGenerationEvent.hasTexture;
+
 public class BlockStateGenerator extends BlockStateProvider {
     private final ExistingFileHelper fileHelper;
     public BlockStateGenerator(DataGenerator output, String modid, ExistingFileHelper exFileHelper) {
@@ -25,6 +27,8 @@ public class BlockStateGenerator extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         for (RegistryObject<Block> entry : ModBlocks.BLOCKS.getEntries()) {
+            if (!hasTexture(this.fileHelper,entry.get())) continue;
+
             // @TODO this better
             if (entry.get() instanceof StairBlock) {
                 stairsBlock((StairBlock) entry.get(), new ResourceLocation(GkIronMod.MOD_ID,"textures/block/" + entry.get().getDescriptionId() + ".png"));
